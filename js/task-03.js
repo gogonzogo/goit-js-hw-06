@@ -13,14 +13,26 @@ const images = [
   },
 ];
 
+// QUERYSELECTOR TO PULL GALLERY FROM HTML
+const gallery = document.querySelector('.gallery');
+
 // LOOP THROUGH IMAGES TO CREATE TEMPLATE STRINGS FOR MARKUP
 const markup = images.map((image) => 
-`<li><img src=${image.url} alt="${image.alt}"></li>`);
+`<li><img class="image" src=${image.url} alt="${image.alt}" width="100" height="100"></li>`);
 console.log(markup);
-// QUERYSELECTOR TO PULL GALLERY 
-const emptyGallery = document.querySelector('.gallery');
+
 // INSERTADJACENTHTML MARKUP INSIDE GALLERY LIST
-emptyGallery.insertAdjacentHTML("afterbegin", markup);
+gallery.insertAdjacentHTML("afterbegin", markup);
+
+
+const image = document.querySelectorAll('.image');
+console.log(image)
+
+// GALLERY STYLES
+
+gallery.style.cssText = "padding: 0; border: 2px solid #000000; display: flex; flex-wrap: wrap; max-width: 320px; margin: 0 auto; list-style: none;"
+image.style.cssText = "display: block;"
+
 
 // Write a script to create a gallery of images from an 
 // array of data. There is a list, ul.gallery, in HTML.
