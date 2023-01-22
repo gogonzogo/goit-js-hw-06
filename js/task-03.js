@@ -12,3 +12,23 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+// LOOP THROUGH IMAGES TO CREATE TEMPLATE STRINGS FOR MARKUP
+const markup = images.map((image) => 
+`<li><img src=${image.url} alt="${image.alt}"></li>`);
+console.log(markup);
+// QUERYSELECTOR TO PULL GALLERY 
+const emptyGallery = document.querySelector('.gallery');
+// INSERTADJACENTHTML MARKUP INSIDE GALLERY LIST
+emptyGallery.insertAdjacentHTML("afterbegin", markup);
+
+// Write a script to create a gallery of images from an 
+// array of data. There is a list, ul.gallery, in HTML.
+
+// Use an array of objects images to create <img> 
+// elements nested in <li>. Use template strings and 
+// the insertAdjacentHTML() method to create markup.
+
+// All gallery items must be added to DOM in one insert operation.
+// Add at least some gallery design with flexboxes or grids
+//  using CSS classes.

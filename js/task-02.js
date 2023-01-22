@@ -12,10 +12,10 @@ const ingredients = [
 const emptyUl = document.querySelectorAll('#ingredients');
 
 ingredients.forEach(i => {
-    i = document.createElement('li');
-    i.textContent = "${i}";
-    i.classList.add("item");
-    emptyUl[0].append(i);
+    const newLi = document.createElement('li');
+    newLi.textContent = i;
+    newLi.classList.add("item");
+    emptyUl[0].append(newLi);
 });
 
 console.log(emptyUl);
