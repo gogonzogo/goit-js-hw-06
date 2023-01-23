@@ -6,16 +6,15 @@ const ref = {
 };    
 
 ref.inputField.addEventListener("input", handleInput);
-    function handleInput(e) {
-        ref.outputField.innerHTML =`${e.target.value}`;
+
+    function handleInput() {
+        let newString = ref.inputField.value.trim();
+        if(newString === '') {
+            ref.outputField.textContent = "Anonymous"
+        } else {
+            ref.outputField.textContent = newString;
+        }
     }
-
-console.log(ref.inputValue)
-
-
-
-
-
 
 // Write a script that, when typing in the input#name-input 
 // input (input event), substitutes its current value into 
