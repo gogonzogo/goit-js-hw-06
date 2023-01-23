@@ -17,33 +17,19 @@ console.log(`Elements: ${categoryLists.length}`);
 
 
 
-// const categoryCount = 
-// document.querySelectorAll('.item').length;
-// // console.log(`Number of categories: ${categoryCount}`);
-// // ---------------
-// // CATEGORY: ANIMAL
-// const animalHeader = document.querySelector('h2');
-// // console.log(`Category: ${animalHeader.textContent}`);
-// // ELEMENTS: 4
-// const animalCategory = document.querySelector('#categories .item');
-// const animalsList = animalCategory.lastElementChild;
-// const animals = animalsList.children.length;
-// // console.log(`Elements: ${animals}`);
-// // ---------------
-// // CATEGORY: PRODUCTS
-// const productsCategory = animalCategory.nextElementSibling;
-// const productsHeader = productsCategory.firstElementChild;
-// // console.log(`Category: ${productsHeader.textContent}`);
-// // ELEMENTS: 3
-// const productsList = productsCategory.lastElementChild;
-// const products = productsList.children.length;
-// // console.log(`Elements: ${products}`);
-// // ---------------
-// // CATEGORY: TECHNOLOGIES
-// const siblingTechnologies = productsCategory.nextElementSibling;
-// const technologiesHeader = siblingTechnologies.firstElementChild;
-// // console.log(`Category: ${technologiesHeader.textContent}`);
-// // ELEMENTS: 5
-// const technologiesList = siblingTechnologies.lastElementChild;
-// const technologies = technologiesList.children.length;
-// // console.log(`Elements: ${technologies}`);
+// Write a script that:
+// Will count and display in the console the number of categories in 
+// ul#categories, that is, li.item elements.
+// For each li.item element in the ul#categories list, will find and 
+// display in the console the element header text (<h2> tag) and the 
+//     number of elements in the category (all nested <li>).
+// As a result, the following messages will be displayed in the console.
+// Number of categories: 3
+
+// Category: Animals
+// Elements: 4
+
+// Category: Products
+// Elements: 3
+
+// Category: Technologies
