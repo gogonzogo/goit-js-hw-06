@@ -15,23 +15,18 @@ const images = [
 
 // QUERYSELECTOR TO PULL GALLERY FROM HTML
 const gallery = document.querySelector('.gallery');
-
 // LOOP THROUGH IMAGES TO CREATE TEMPLATE STRINGS FOR MARKUP
 const markup = images.map((image) => 
-`<li><img class="image" src=${image.url} alt="${image.alt}" width="100" height="100"></li>`);
-console.log(markup);
-
+`<li><img class="image" src=${image.url} alt="${image.alt}" width="200" height="200"></li>`).join('');
 // INSERTADJACENTHTML MARKUP INSIDE GALLERY LIST
 gallery.insertAdjacentHTML("afterbegin", markup);
-
-
-const image = document.querySelectorAll('.image');
-console.log(image)
-
+// GALLERY STYLES REFRENCE
+const imageArray = document.querySelectorAll('.image');
+const li = document.querySelectorAll('li');
 // GALLERY STYLES
-
-gallery.style.cssText = "padding: 0; border: 2px solid #000000; display: flex; flex-wrap: wrap; max-width: 320px; margin: 0 auto; list-style: none;"
-image.style.cssText = "display: block;"
+gallery.style.cssText = " margin: 0; border: 2px solid #000000; display: flex; list-style-type: none;"
+imageArray.forEach(image => {image.style.cssText = "display: block;"});
+li.setAttribute('style', 'display: flex; flex-wrap: wrap; list-style-type: none; margin-right: 10px;')
 
 
 // Write a script to create a gallery of images from an 

@@ -1,16 +1,22 @@
 "use strict";
 
-const counter = document.querySelector('#counter');
-const decrementButton = counter.firstElementChild;
-const incrementButton = counter.lastElementChild;
-const counterLog = document.querySelector('#value');;
+const ref = {
+    decrementButton: document.querySelector('[data-action="decrement"]'),
+    incrementButton: document.querySelector('[data-action="increment"]'),
+    counterLog: document.querySelector('#value'),
+}
+
 let counterValue = 0;
 
-decrementButton.addEventListener("click", decrement);
-    function decrement(){counterLog.innerHTML--;}
+ref.decrementButton.addEventListener("click", handleDecrement);
+ref.incrementButton.addEventListener("click", handleIncrement);
 
-incrementButton.addEventListener("click", increment);
-    function increment(){counterLog.innerHTML++;}
+    function handleDecrement() {
+        ref.counterLog.innerHTML--;
+    }
+    function handleIncrement() {
+        ref.counterLog.innerHTML++;
+    }
 
 
 // The counter consists of a span and buttons, which, when clicked, 
