@@ -1,16 +1,18 @@
 "use strict";
 
-const content = document.querySelector('#text');
-const controller = document.querySelector('#font-size-control');
-
-controller.addEventListener("input", (e));
+const ref = {
+    content: document.querySelector('#text'),
+    controller: document.querySelector('#font-size-control'),
+}   
+ref.controller.addEventListener("input", (e));
 
 function e() {
-        const sliderValue = controller.value;
-        content.style.fontSize = sliderValue + "px";
+        const sliderValue = ref.controller.value;
+        ref.content.style.fontSize = sliderValue + "px";
     };
 
 
+    
 // Write a script that responds to changes in the value 
 // of input#font-size-control (input event) and changes 
 // the inline style of span#text by updating the 
