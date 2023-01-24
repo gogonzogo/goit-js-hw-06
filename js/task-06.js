@@ -24,6 +24,8 @@ console.log(handleBlur);
         }   
     };
 
+    ref.inputField.style.cssText = "outline: none;"
+
 // Write a script that, when focus on input is lost (blur event), 
 // checks its contents for the correct number of entered characters.
 
