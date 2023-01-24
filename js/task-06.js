@@ -5,18 +5,22 @@ const ref = {
 };
 
 const inputReq = ref.inputField.getAttribute("data-length");
-console.log(inputReq);
+const parsedInputReq = parseInt(inputReq);
+console.log(parsedInputReq);
 
-ref.inputField.addEventListener("blur", handleBlur);
+ref.inputField.addEventListener("input", handleBlur);
+console.log(handleBlur);
 
     function handleBlur() {
         let inputString = ref.inputField.value.trim();
-        console.log(inputString.length === inputReq);
+        console.log(inputString.length === parsedInputReq);
         console.log(inputString.length);
-        if(inputString.length === inputReq) {
+        if(inputString.length === parsedInputReq) {
             ref.inputField.classList.add("valid");
+            ref.inputField.classList.remove("invalid");
         } else {
             ref.inputField.classList.add("invalid");
+            ref.inputField.classList.remove("valid");
         }   
     };
 
