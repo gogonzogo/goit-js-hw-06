@@ -3,10 +3,11 @@
 const ref = {
     content: document.querySelector('#text'),
     controller: document.querySelector('#font-size-control'),
-}   
-ref.controller.addEventListener("input", (e));
+}
+ref.content.style.fontSize = ref.controller.value + 'px';
+ref.controller.addEventListener("input", (handleController));
 
-function e() {
+function handleController() {
         const sliderValue = ref.controller.value;
         ref.content.style.fontSize = sliderValue + "px";
     };
