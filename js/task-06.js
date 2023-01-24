@@ -2,30 +2,23 @@
  
 const ref = {
     inputField: document.querySelector('#validation-input'),
-    
 };
 
-const charRequirement = ref.inputField.getAttribute("data-length");
-console.log(charRequirement);
+const inputReq = ref.inputField.getAttribute("data-length");
+console.log(inputReq);
 
+ref.inputField.addEventListener("blur", handleBlur);
 
-
-ref.inputField.addEventListener("input", charCount => {
-    let inputStr = ref.inputField.value.trim();
-    console.log(inputStr.length);
-});
-    
-
-ref.inputField.addEventListener("blur", () => {
-    console.log(blur);
-   
-});
-
-// if input vlaue length < charRequirement
-// classlist invalid
-// else
-// class valid
-
+    function handleBlur() {
+        let inputString = ref.inputField.value.trim();
+        console.log(inputString.length === inputReq);
+        console.log(inputString.length);
+        if(inputString.length === inputReq) {
+            ref.inputField.classList.add("valid");
+        } else {
+            ref.inputField.classList.add("invalid");
+        }   
+    };
 
 // Write a script that, when focus on input is lost (blur event), 
 // checks its contents for the correct number of entered characters.
