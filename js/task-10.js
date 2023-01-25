@@ -7,43 +7,55 @@ const ref = {
   createButton: document.querySelector('[data-create]'),
   destroyButton: document.querySelector('[data-destroy]'),
 };
-
-
-
+// CREATE BOX NUMBER INPUT LISTENER
 ref.input.addEventListener("change", (numSelect));
-
+// CREATE BOX NUMBER VALUE FUNCTION
 function numSelect() {
-  console.log(ref.input.value);
+  if (ref.input.value > 100) {
+    alert("Max 100");
+    input.value = 100;
+  }
 }
-
 // RANDOM HEX COLOR GENERATOR
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 // CREATE BOXES FUNCTION
 function createBoxes() {
+  // CREATE BOXES REFRENCES
   const boxCount = ref.input.value;
   console.log(ref.input.value);
-  const box = document.createElement('div');
-  box.style.backgroundColor = getRandomHexColor();
-  box.style.width = "30px";
-  box.style.height = "30px";
-  ref.boxes.appendChild(box);
-
-  
-}
-  
-//   for (let i = 0; i <= boxCount; i++) {
-//   }
-// }
-
+  // FOR LOOP TO CREATE BOXES
+    for (let i = 0; i <= boxCount; i++) {
+      const box = document.createElement('div');
+      box.style.backgroundColor = getRandomHexColor();
+      box.style.width = "30px";
+      box.style.height = "30px";
+      ref.boxes.appendChild(box);
+    }
+  }
+// CREATE BOXES BUTTON CLICK LISTENER
 ref.createButton.addEventListener('click', createBtnClick);
-
-  function createBtnClick() {
+  // CREATE BOXES BUTTON CLICK FUNCTION
+function createBtnClick() {
+    // CREATE BOXES FUNCTION CALLBACK
     createBoxes()
 };
-
-
+// DESTROY BOXES FUNCTION
+function destroyBoxes() {
+  let child = ref.boxes.lastElementChild;
+  while (child) {
+    ref.boxes.removeChild(child);
+    child = ref.boxes.lastElementChild;
+  }
+}
+// DESRTROY BOXES BUTTON CLICK LISTENER
+ref.destroyButton.addEventListener('click', destroyBtnClick);
+// destroy BOXES BUTTON CLICK FUNCTION
+function destroyBtnClick() {
+  // destroy BOXES FUNCTION CALLBACK
+  destroyBoxes()
+};
 
 
 // Write a script to create and clear a collection of elements.
