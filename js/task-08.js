@@ -1,22 +1,31 @@
 "use strict";
-
-const form = document.querySelector('form');
-console.log(form);
-
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
-    event.preventDefault();
-    const {
-        elements: { email, password }
-    } = event.currentTarget;
-    if (email.value === "" || password.value === "") {
-        console.log("All fields filled in required for submission.");
-    }
-    console.log (`Email: ${email.value}, Password: ${password.value}`);
-    event.currentTarget.reset();
+// HTML REFRENCES
+const ref = {
+    form: document.querySelector('form'),
 }
 
+// SUBMIT EVENT LISTENER
+ref.form.addEventListener("submit", handleSubmit);
+// SUBMIT FUNCTION
+function handleSubmit(submitClick) {
+    // PREVENT BROWSER RELOD
+    submitClick.preventDefault();
+    // ADD FORM DATA TO OBJECT
+    const formsData = new FormData(ref.form);
+    const formDataObject = Object.fromEntries(formsData);
+    // DISPLAY FORM DATA IN CONSOLE
+    console.log(formDataObject);
+    // SETTING TARGETS FOR EVENT
+    const {
+        elements: { email, password }
+    } = submitClick.currentTarget;
+    // CRITERIA FOR ALERT MESSAGE
+    if (email.value === "" || password.value === "") {
+        alert("All fields filled required for submission.");
+    } 
+    // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
+    submitClick.currentTarget.reset();
+}
 
 // Write a script to manage the login form.
 
