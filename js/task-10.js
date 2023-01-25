@@ -13,7 +13,7 @@ ref.input.addEventListener("change", (numSelect));
 function numSelect() {
   if (ref.input.value > 100) {
     alert("Max 100");
-    input.value = 100;
+    ref.input.value = 100;
   }
 }
 // RANDOM HEX COLOR GENERATOR
