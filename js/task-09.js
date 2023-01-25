@@ -10,6 +10,7 @@ const ref = {
 ref.colorChanger.addEventListener('click', (buttonClicked));
 // BUTTON CLICKED FUNCTION
 function buttonClicked() {
+  // REFRENCE FOR NEW RANDOM COLOR
   const newColor = getRandomHexColor();
   console.log(newColor);
   // UPDATE BODY BACKGROUND COLOR

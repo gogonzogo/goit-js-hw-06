@@ -15,15 +15,11 @@ function handleSubmit(submitClick) {
         elements: { email, password }
     } = submitClick.currentTarget;
     // CRITERIA FOR ALERT MESSAGE
-    if (email.value === "" || password.value === "") {
+    if (email.value === "" || password.value.trim().length === 0) {
         console.log(password.value.length);
         alert("All fields filled required for submission.");
         return false;
-    } else if (password.value.trim().length === 0) {
-        console.log(password.value.length);
-        alert("Password can not be spaces");
-        return false;
-    }
+    } 
     // ADD FORM DATA TO OBJECT
     const formsData = new FormData(ref.form);
     const formDataObject = Object.fromEntries(formsData);
