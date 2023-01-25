@@ -10,11 +10,6 @@ ref.form.addEventListener("submit", handleSubmit);
 function handleSubmit(submitClick) {
     // PREVENT BROWSER RELOD
     submitClick.preventDefault();
-    // ADD FORM DATA TO OBJECT
-    const formsData = new FormData(ref.form);
-    const formDataObject = Object.fromEntries(formsData);
-    // DISPLAY FORM DATA IN CONSOLE
-    console.log(formDataObject);
     // SETTING TARGETS FOR EVENT
     const {
         elements: { email, password }
@@ -22,7 +17,15 @@ function handleSubmit(submitClick) {
     // CRITERIA FOR ALERT MESSAGE
     if (email.value === "" || password.value === "") {
         alert("All fields filled required for submission.");
+        return false;
     } 
+    // ADD FORM DATA TO OBJECT
+    const formsData = new FormData(ref.form);
+    const formDataObject = Object.fromEntries(formsData);
+    // DISPLAY FORM DATA IN CONSOLE
+    console.log(formDataObject);
+    
+   
     // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
     submitClick.currentTarget.reset();
 }

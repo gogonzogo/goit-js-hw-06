@@ -26,7 +26,7 @@ function createBoxes() {
   const boxCount = ref.input.value;
   console.log(ref.input.value);
   // FOR LOOP TO CREATE BOXES
-    for (let i = 0; i <= boxCount; i++) {
+    for (let i = 0; i < boxCount; i++) {
       const box = document.createElement('div');
       box.style.backgroundColor = getRandomHexColor();
       box.style.width = "30px";
