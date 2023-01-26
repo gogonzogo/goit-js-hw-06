@@ -27,15 +27,15 @@ function createBoxes() {
   console.log(ref.input.value);
   // FOR LOOP TO CREATE BOXES
   for (let i = 0; i < boxCount; i++) {
-    let firstWidth = 30;
-    let firstHeight = 30;
       const box = document.createElement('div');
       box.style.backgroundColor = getRandomHexColor();
-      box.style.width = "30px";
-      box.style.height = "30px";
+      box.style.width = (30 + (10 * i)) + 'px';
+      box.style.height = (30 + (10 * i)) + 'px';
       ref.boxes.appendChild(box);
     }
-  }
+}
+// STYLES FOR CENTERING BOXES
+boxes.style.cssText = "display: flex; flex-direction: column; align-items: center;"
 // CREATE BOXES BUTTON CLICK LISTENER
 ref.createButton.addEventListener('click', createBtnClick);
   // CREATE BOXES BUTTON CLICK FUNCTION

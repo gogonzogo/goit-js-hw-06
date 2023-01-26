@@ -7,15 +7,15 @@ const ref = {
 // SUBMIT EVENT LISTENER
 ref.form.addEventListener("submit", handleSubmit);
 // SUBMIT FUNCTION
-function handleSubmit(submitClick) {
+function handleSubmit(event) {
     // PREVENT BROWSER RELOD
-    submitClick.preventDefault();
+    event.preventDefault();
     // SETTING TARGETS FOR EVENT
     const {
         elements: { email, password }
-    } = submitClick.currentTarget;
+    } = event.currentTarget;
     // CRITERIA FOR ALERT MESSAGE
-    if (email.value === "" || password.value.trim().length === 0) {
+    if (email.value.trim() === "" || password.value.trim() === "") {
         console.log(password.value.length);
         alert("All fields filled required for submission.");
         return false;
@@ -28,7 +28,7 @@ function handleSubmit(submitClick) {
     
    
     // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
-    submitClick.currentTarget.reset();
+    event.currentTarget.reset();
 }
 
 // Write a script to manage the login form.
