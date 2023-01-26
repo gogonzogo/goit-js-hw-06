@@ -17,7 +17,6 @@ function handleSubmit(event) {
     let noWhiteSpaces = /^\S*$/;
     // CRITERIA FOR ALERT MESSAGE
     if (email.value.trim() === "" || password.value.trim() === "") {
-        console.log(password.value.length);
         alert("All fields required for submission.");
         return false;
     } else {
