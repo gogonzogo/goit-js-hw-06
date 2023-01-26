@@ -14,12 +14,18 @@ function handleSubmit(event) {
     const {
         elements: { email, password }
     } = event.currentTarget;
+    let noWhiteSpaces = /^\S*$/;
     // CRITERIA FOR ALERT MESSAGE
     if (email.value.trim() === "" || password.value.trim() === "") {
         console.log(password.value.length);
-        alert("All fields filled required for submission.");
+        alert("All fields required for submission.");
         return false;
-    } 
+    } else {
+        if (!password.value.match(noWhiteSpaces)) {
+            alert("No spaces allowed in password.");
+            return false;
+        }
+    }
     // ADD FORM DATA TO OBJECT
     const formsData = new FormData(ref.form);
     const formDataObject = Object.fromEntries(formsData);
