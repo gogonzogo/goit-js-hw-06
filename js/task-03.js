@@ -26,7 +26,7 @@ const li = document.querySelectorAll('li');
 // GALLERY STYLES
 gallery.style.cssText = " margin: 0; border: 2px solid #000000; display: flex; list-style-type: none;"
 imageArray.forEach(image => {image.style.cssText = "display: block;"});
-li.setAttribute('style', 'display: flex; flex-wrap: wrap; list-style-type: none; margin-right: 10px;')
+
 
 
 // Write a script to create a gallery of images from an 

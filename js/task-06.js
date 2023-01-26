@@ -6,15 +6,11 @@ const ref = {
 // VARIABLE REFRENCES
 const inputReq = ref.inputField.getAttribute("data-length");
 const parsedInputReq = parseInt(inputReq);
-console.log(parsedInputReq);
 // INPUT EVENT LISTENER
 ref.inputField.addEventListener("input", handleBlur);
-console.log(handleBlur);
 // HANDLE INPUT EVENT FUNCTION
     function handleBlur() {
         let inputString = ref.inputField.value.trim();
-        console.log(inputString.length === parsedInputReq);
-        console.log(inputString.length);
         if(inputString.length === parsedInputReq) {
             ref.inputField.classList.add("valid");
             ref.inputField.classList.remove("invalid");

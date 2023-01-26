@@ -19,7 +19,6 @@ ingredients.forEach(i => {
     newLi.classList.add("item");
     ref.emptyUl[0].append(newLi);
 });
-console.log(emptyUl);
 
 // Write a script that, for each element in the ingredients array:
             // forEach Loop
