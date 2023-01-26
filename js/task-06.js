@@ -1,16 +1,16 @@
 "use strict";
- 
+//  HTML REFRENCES
 const ref = {
     inputField: document.querySelector('#validation-input'),
 };
-
+// VARIABLE REFRENCES
 const inputReq = ref.inputField.getAttribute("data-length");
 const parsedInputReq = parseInt(inputReq);
 console.log(parsedInputReq);
-
+// INPUT EVENT LISTENER
 ref.inputField.addEventListener("input", handleBlur);
 console.log(handleBlur);
-
+// HANDLE INPUT EVENT FUNCTION
     function handleBlur() {
         let inputString = ref.inputField.value.trim();
         console.log(inputString.length === parsedInputReq);
@@ -23,7 +23,7 @@ console.log(handleBlur);
             ref.inputField.classList.remove("valid");
         }   
     };
-
+// STYLES TO REMOVE OUTLINE OF INPUT FIELD
     ref.inputField.style.cssText = "outline: none;"
 
 // Write a script that, when focus on input is lost (blur event), 

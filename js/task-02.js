@@ -8,16 +8,17 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-
-const emptyUl = document.querySelectorAll('#ingredients');
-
+// HTML REFRENCES
+const ref = {
+  emptyUl: document.querySelectorAll('#ingredients'),
+}
+// LOOP TO ITERATE OVER INGREDIENTS LIST, CREATE AND ADD TO HTML
 ingredients.forEach(i => {
     const newLi = document.createElement('li');
     newLi.textContent = i;
     newLi.classList.add("item");
-    emptyUl[0].append(newLi);
+    ref.emptyUl[0].append(newLi);
 });
-
 console.log(emptyUl);
 
 // Write a script that, for each element in the ingredients array:

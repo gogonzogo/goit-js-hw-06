@@ -1,12 +1,12 @@
 "use strict";
-
+// HTML REFRENCES
 const ref = {
     inputField: document.querySelector('#name-input'),
     outputField: document.querySelector('#name-output'),
 };    
-
+// INPUT EVENT LISTENER
 ref.inputField.addEventListener("input", handleInput);
-
+// HANDLE INPUT EVENT FUNCTION
     function handleInput() {
         let newString = ref.inputField.value.trim();
         if(newString === '') {

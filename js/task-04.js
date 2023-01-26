@@ -1,21 +1,20 @@
 "use strict";
-
+// HTML REFRENCES
 const ref = {
     decrementButton: document.querySelector('[data-action="decrement"]'),
     incrementButton: document.querySelector('[data-action="increment"]'),
-    counterLog: document.querySelector('#value'),
+    counterValue: document.querySelector('#value'),
 }
-
-let counterValue = 0;
-
+// EVENT LISTENERS FOR BUTTON CLICKS
 ref.decrementButton.addEventListener("click", handleDecrement);
 ref.incrementButton.addEventListener("click", handleIncrement);
-
+// FUNCTION TO HANDLE DECREMENT BUTTON CLICK EVENTS
     function handleDecrement() {
-        ref.counterLog.innerHTML--;
+        ref.counterValue.innerHTML--;
     }
+// FUNCTION TO HANDLE INCREMENT BUTTON CLICK EVENT
     function handleIncrement() {
-        ref.counterLog.innerHTML++;
+        ref.counterValue.innerHTML++;
     }
 
 
