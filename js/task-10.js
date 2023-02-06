@@ -24,7 +24,6 @@ function getRandomHexColor() {
 function createBoxes() {
   // CREATE BOXES REFRENCES
   const boxCount = ref.input.value;
-  console.log(ref.input.value);
   // FOR LOOP TO CREATE BOXES
   for (let i = 0; i < boxCount; i++) {
       const box = document.createElement('div');

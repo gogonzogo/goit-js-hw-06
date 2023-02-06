@@ -31,7 +31,6 @@ function handleSubmit(event) {
     // DISPLAY FORM DATA IN CONSOLE
     console.log(formDataObject);
     
-   
     // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
     event.currentTarget.reset();
 }
