@@ -6,24 +6,18 @@ const ref = {
   colorChanger: document.querySelector('.change-color'),
 }
 
-// BUTTON CLICK EVENT LISTENER ADDED
 ref.colorChanger.addEventListener('click', (buttonClicked));
-// BUTTON CLICKED FUNCTION
+
 function buttonClicked() {
-  // REFRENCE FOR NEW RANDOM COLOR
   const newColor = getRandomHexColor();
   console.log(newColor);
-  // UPDATE BODY BACKGROUND COLOR
   ref.body.style.backgroundColor = newColor;
-  // UPDATE SPAN TEXT TO HEX COLOR STRING
   ref.span.textContent = newColor;
 }
-// RANDOM HEX COLOR GENERATOR
+
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
-
 
 
 

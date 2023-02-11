@@ -14,25 +14,26 @@ function handleSubmit(event) {
     const {
         elements: { email, password }
     } = event.currentTarget;
-    let noWhiteSpaces = /^\S*$/;
-    // CRITERIA FOR ALERT MESSAGE
-    if (email.value.trim() === "" || password.value.trim() === "") {
-        alert("All fields required for submission.");
-        return false;
-    } else {
-        if (!password.value.match(noWhiteSpaces)) {
-            alert("No spaces allowed in password.");
-            return false;
-        }
-    }
-    // ADD FORM DATA TO OBJECT
-    const formsData = new FormData(ref.form);
-    const formDataObject = Object.fromEntries(formsData);
-    // DISPLAY FORM DATA IN CONSOLE
-    console.log(formDataObject);
+
+    // let noWhiteSpaces = /^\S*$/;
+    // // CRITERIA FOR ALERT MESSAGE
+    // if (email.value.trim() === "" || password.value.trim() === "") {
+    //     alert("All fields required for submission.");
+    //     return false;
+    // } else {
+    //     if (!password.value.match(noWhiteSpaces)) {
+    //         alert("No spaces allowed in password.");
+    //         return false;
+    //     }
+    // }
+    // // ADD FORM DATA TO OBJECT
+    // const formsData = new FormData(ref.form);
+    // const formDataObject = Object.fromEntries(formsData);
+    // // DISPLAY FORM DATA IN CONSOLE
+    // console.log(formDataObject);
     
-    // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
-    event.currentTarget.reset();
+    // // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
+    // event.currentTarget.reset();
 }
 
 // Write a script to manage the login form.
