@@ -4,36 +4,30 @@ const ref = {
     form: document.querySelector('form'),
 }
 
-// SUBMIT EVENT LISTENER
 ref.form.addEventListener("submit", handleSubmit);
-// SUBMIT FUNCTION
+
 function handleSubmit(event) {
-    // PREVENT BROWSER RELOD
     event.preventDefault();
-    // SETTING TARGETS FOR EVENT
     const {
         elements: { email, password }
     } = event.currentTarget;
 
-    // let noWhiteSpaces = /^\S*$/;
-    // // CRITERIA FOR ALERT MESSAGE
-    // if (email.value.trim() === "" || password.value.trim() === "") {
-    //     alert("All fields required for submission.");
-    //     return false;
-    // } else {
-    //     if (!password.value.match(noWhiteSpaces)) {
-    //         alert("No spaces allowed in password.");
-    //         return false;
-    //     }
-    // }
-    // // ADD FORM DATA TO OBJECT
-    // const formsData = new FormData(ref.form);
-    // const formDataObject = Object.fromEntries(formsData);
-    // // DISPLAY FORM DATA IN CONSOLE
-    // console.log(formDataObject);
-    
-    // // FORM RESET METHOD TO CLEAR FORM POST SUBMISSION
-    // event.currentTarget.reset();
+    let noWhiteSpaces = /^\S*$/;
+    if (email.value.trim() === "" || password.value.trim() === "") {
+        alert("All fields required for submission.");
+        return false;
+    } else {
+        if (!password.value.match(noWhiteSpaces)) {
+            alert("No spaces allowed in password.");
+            return false;
+        }
+    }
+
+    const formsData = new FormData(ref.form);
+    const formDataObject = Object.fromEntries(formsData);
+    console.log(formDataObject);
+
+    event.currentTarget.reset();
 }
 
 // Write a script to manage the login form.
