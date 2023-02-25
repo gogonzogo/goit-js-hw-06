@@ -1,5 +1,3 @@
-"use strict";
-// HTML REFRENCES
 const ref = {
     inputField: document.querySelector('#name-input'),
     outputField: document.querySelector('#name-output'),

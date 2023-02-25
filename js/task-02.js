@@ -1,5 +1,3 @@
-"use strict";
-
 const ingredients = [
   'Potatoes',
   'Mushrooms',
@@ -8,11 +6,11 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-// HTML REFRENCES
+
 const ref = {
   emptyUl: document.querySelectorAll('#ingredients'),
 }
-// LOOP TO ITERATE OVER INGREDIENTS LIST, CREATE AND ADD TO HTML
+
 ingredients.forEach(i => {
     const newLi = document.createElement('li');
     newLi.textContent = i;

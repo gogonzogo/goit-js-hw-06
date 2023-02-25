@@ -13,17 +13,16 @@ const images = [
   },
 ];
 
-// QUERYSELECTOR TO PULL GALLERY FROM HTML
 const gallery = document.querySelector('.gallery');
-// LOOP THROUGH IMAGES TO CREATE TEMPLATE STRINGS FOR MARKUP
+
 const markup = images.map((image) => 
 `<li><img class="image" src=${image.url} alt="${image.alt}" width="200" height="200"></li>`).join('');
-// INSERTADJACENTHTML MARKUP INSIDE GALLERY LIST
+
 gallery.insertAdjacentHTML("afterbegin", markup);
-// GALLERY STYLES REFRENCE
+
 const imageArray = document.querySelectorAll('.image');
 const li = document.querySelectorAll('li');
-// GALLERY STYLES
+
 gallery.style.cssText = " margin: 0; border: 2px solid #000000; display: flex; list-style-type: none;"
 imageArray.forEach(image => {image.style.cssText = "display: block;"});
 

@@ -1,5 +1,3 @@
-"use strict";
-// HTML REFRENCES
 const ref = {
   body: document.querySelector('body'),
   span: document.querySelector('.color'),

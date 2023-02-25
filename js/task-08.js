@@ -1,5 +1,3 @@
-"use strict";
-// HTML REFRENCES
 const ref = {
     form: document.querySelector('form'),
 }
@@ -12,12 +10,12 @@ function handleSubmit(event) {
         elements: { email, password }
     } = event.currentTarget;
 
-    let noWhiteSpaces = /^\S*$/;
+    let whiteSpaces = /^\S*$/;
     if (email.value.trim() === "" || password.value.trim() === "") {
         alert("All fields required for submission.");
         return false;
     } else {
-        if (!password.value.match(noWhiteSpaces)) {
+        if (!password.value.match(whiteSpaces)) {
             alert("No spaces allowed in password.");
             return false;
         }
