@@ -17,7 +17,7 @@ function handleSubmit(event) {
     } else {
         if (!password.value.match(whiteSpaces)) {
             alert("No spaces allowed in password.");
-            return false;
+        return false;
         }
     }
 
